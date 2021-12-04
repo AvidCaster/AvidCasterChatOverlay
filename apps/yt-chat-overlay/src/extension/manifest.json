@@ -3,7 +3,7 @@
   "description": "The Official AvidCaster YouTube Chat Overlay Extension",
   "manifest_version": 3,
   "version": "1.0.2",
-  "homepage_url": "https://github.com/AvidCaster/AvidcasterYouTubeOverlay",
+  "homepage_url": "https://github.com/AvidCaster/AvidCasterChatOverlay",
   "icons": {
     "128": "assets/icons/icon-x128.png"
   },
