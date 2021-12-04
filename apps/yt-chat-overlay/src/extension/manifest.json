@@ -11,12 +11,6 @@
     "default_popup": "index.html"
   },
   "incognito": "spanning",
-  "host_permissions": [
-    "https://youtube.com/*",
-    "https://www.youtube.com/*",
-    "https://studio.youtube.com/*",
-    "https://www.twitch.tv/*"
-  ],
   "content_scripts": [
     {
       "css": ["content.css"],
