@@ -1,3 +1,4 @@
 #avidcaster-iframe {
-  max-height: calc(10%) !important;
+  max-height: 50% !important;
+  height: 33.3% !important;
 }
