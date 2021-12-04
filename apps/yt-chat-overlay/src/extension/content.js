@@ -72,13 +72,13 @@ function AC_GetDomainName() {
 }
 
 // post message to iframe
-function AC_PostMessageSouthBound(data) {
+function AC_PostMessageSouthBound(action, payload = undefined) {
   // post the data to the remote window
-  data = {
+  const data = {
     type: 'avidcaster-chat-south-bound',
-    action: 'new-chat',
     host: AC_GetDomainName(),
-    payload: data,
+    action,
+    payload,
   };
 
   document
@@ -90,7 +90,7 @@ function AC_PostMessageSouthBound(data) {
 function AC_ListenForNewChat(container, selectors) {
   AC_SelectOnInsertion(container, selectors, function (element, tagName) {
     // console.log(`highlighting new msg: ${$(element).html()}`);
-    AC_PostMessageSouthBound({
+    AC_PostMessageSouthBound('chat', {
       tagName,
       html: $(element).html(),
     });
@@ -125,12 +125,22 @@ function AC_ListenToChild() {
     (event) => {
       if (event.data.type === 'avidcaster-chat-north-bound') {
         switch (event.data.action) {
-          case 'observe-chat':
-            console.log(`listen for msg on: ${event.data.payload.container}`);
+          case 'observe':
             AC_ListenForNewChat(
               event.data.payload.container,
               event.data.payload.selectors
             );
+            console.log(
+              `Observing for new chat on: ${event.data.payload.container}`
+            );
+            break;
+          case 'ping':
+            AC_PostMessageSouthBound('pong');
+            console.log(`Ping received, Pong sent`);
+            break;
+          case 'iframe':
+            AC_InsertIframe(event.data.payload.container);
+            console.log(`Append iframe to ${event.data.payload.container}`);
             break;
           default:
             break;

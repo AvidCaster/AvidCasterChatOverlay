@@ -1,8 +1,8 @@
 {
-  "name": "YouTube Chat Overlay",
-  "description": "The Official AvidCaster YouTube Chat Overlay Extension",
+  "name": "AvidCaster Chat Overlay",
+  "description": "The Official AvidCaster Chat Overlay Extension",
   "manifest_version": 3,
-  "version": "1.0.2",
+  "version": "1.0.0",
   "homepage_url": "https://github.com/AvidCaster/AvidCasterChatOverlay",
   "icons": {
     "128": "assets/icons/icon-x128.png"
@@ -11,6 +11,12 @@
     "default_popup": "index.html"
   },
   "incognito": "spanning",
+  "host_permissions": [
+    "https://youtube.com/*",
+    "https://www.youtube.com/*",
+    "https://studio.youtube.com/*",
+    "https://www.twitch.tv/*"
+  ],
   "content_scripts": [
     {
       "css": ["content.css"],
