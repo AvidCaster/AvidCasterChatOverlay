@@ -1,0 +1,36 @@
+/*
+   * Remove template code below
+   */
+:host {
+  display: block;
+  font-family: sans-serif;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 15px auto;
+}
+
+#header h1 {
+  margin: 15px auto;
+  text-align: center;
+  font-size: medium;
+}
+
+#header #ac-icon {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin: 1px auto;
+}
+
+p {
+  margin: 0;
+  padding: 15px;
+}
+
+p span {
+  font-weight: bold;
+}
+
+#ac-overlay {
+  width: 100%;
+}

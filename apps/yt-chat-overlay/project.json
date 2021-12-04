@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "root": "apps/yt-chat-overlay",
+  "sourceRoot": "apps/yt-chat-overlay/src",
+  "prefix": "you-tube-chat",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/yt-chat-overlay",
+        "index": "apps/yt-chat-overlay/src/index.html",
+        "main": "apps/yt-chat-overlay/src/main.ts",
+        "polyfills": "apps/yt-chat-overlay/src/polyfills.ts",
+        "tsConfig": "apps/yt-chat-overlay/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/yt-chat-overlay/src/favicon.ico",
+          "apps/yt-chat-overlay/src/assets",
+          {
+            "glob": "**/*(*.js|*.css|*.json)",
+            "input": "apps/yt-chat-overlay/src/extension",
+            "output": "/"
+          }
+        ],
+        "styles": ["apps/yt-chat-overlay/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/yt-chat-overlay/src/environments/environment.ts",
+              "with": "apps/yt-chat-overlay/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "none"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "yt-chat-overlay:build:production"
+        },
+        "development": {
+          "browserTarget": "yt-chat-overlay:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/yt-chat-overlay/src/**/*.ts",
+          "apps/yt-chat-overlay/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/yt-chat-overlay"],
+      "options": {
+        "jestConfig": "apps/yt-chat-overlay/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["app-ext:yt-chat-overlay"]
+}
