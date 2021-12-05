@@ -113,7 +113,7 @@ function AC_InsertIframe(container = 'body') {
     var target = AC_GetDomainName() || 'youtube';
 
     $(container).append(
-      `<iframe id="avidcaster-iframe" src="https://${server}/chat/monitor?site=${target}"></iframe>`
+      `<iframe id="avidcaster-iframe" src="https://${server}/chat/monitor/iframe?site=${target}"></iframe>`
     );
   }
 }
