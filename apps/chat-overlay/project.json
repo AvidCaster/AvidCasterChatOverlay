@@ -1,29 +1,29 @@
 {
   "projectType": "application",
-  "root": "apps/yt-chat-overlay",
-  "sourceRoot": "apps/yt-chat-overlay/src",
+  "root": "apps/chat-overlay",
+  "sourceRoot": "apps/chat-overlay/src",
   "prefix": "you-tube-chat",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/yt-chat-overlay",
-        "index": "apps/yt-chat-overlay/src/index.html",
-        "main": "apps/yt-chat-overlay/src/main.ts",
-        "polyfills": "apps/yt-chat-overlay/src/polyfills.ts",
-        "tsConfig": "apps/yt-chat-overlay/tsconfig.app.json",
+        "outputPath": "dist/apps/chat-overlay",
+        "index": "apps/chat-overlay/src/index.html",
+        "main": "apps/chat-overlay/src/main.ts",
+        "polyfills": "apps/chat-overlay/src/polyfills.ts",
+        "tsConfig": "apps/chat-overlay/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/yt-chat-overlay/src/favicon.ico",
-          "apps/yt-chat-overlay/src/assets",
+          "apps/chat-overlay/src/favicon.ico",
+          "apps/chat-overlay/src/assets",
           {
             "glob": "**/*(*.js|*.css|*.json)",
-            "input": "apps/yt-chat-overlay/src/extension",
+            "input": "apps/chat-overlay/src/extension",
             "output": "/"
           }
         ],
-        "styles": ["apps/yt-chat-overlay/src/styles.scss"],
+        "styles": ["apps/chat-overlay/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -42,8 +42,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/yt-chat-overlay/src/environments/environment.ts",
-              "with": "apps/yt-chat-overlay/src/environments/environment.prod.ts"
+              "replace": "apps/chat-overlay/src/environments/environment.ts",
+              "with": "apps/chat-overlay/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "none"
@@ -63,10 +63,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "yt-chat-overlay:build:production"
+          "browserTarget": "chat-overlay:build:production"
         },
         "development": {
-          "browserTarget": "yt-chat-overlay:build:development"
+          "browserTarget": "chat-overlay:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -75,19 +75,19 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/yt-chat-overlay/src/**/*.ts",
-          "apps/yt-chat-overlay/src/**/*.html"
+          "apps/chat-overlay/src/**/*.ts",
+          "apps/chat-overlay/src/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/yt-chat-overlay"],
+      "outputs": ["coverage/apps/chat-overlay"],
       "options": {
-        "jestConfig": "apps/yt-chat-overlay/jest.config.js",
+        "jestConfig": "apps/chat-overlay/jest.config.js",
         "passWithNoTests": true
       }
     }
   },
-  "tags": ["app-ext:yt-chat-overlay"]
+  "tags": ["app-ext:chat-overlay"]
 }

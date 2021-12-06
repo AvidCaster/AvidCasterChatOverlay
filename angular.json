@@ -1,6 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "yt-chat-overlay": "apps/yt-chat-overlay"
+    "chat-overlay": "apps/chat-overlay"
   }
 }

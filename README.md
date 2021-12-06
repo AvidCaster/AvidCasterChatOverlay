@@ -4,7 +4,7 @@ Avidcaster Chat Overlay - Chrome Extension
 
 ## `Description`
 
-Chrome Extension that enables [Avidcaster](https://avidcaster.net/chat/overview) to providing a low-cost lower-third video chat overlay.
+Chrome Extension that enables [Avidcaster](https://avidcaster.net/chat/overlay/overview) to providing a low-cost lower-third video chat overlay.
 
 ## `Overview`
 
@@ -13,7 +13,7 @@ Chrome Extension that enables [Avidcaster](https://avidcaster.net/chat/overview)
 The following image is what the end user sees on a their Live Video stream with chat overlay.
 
 <p align="center">
-<img src="apps/yt-chat-overlay/src/assets/images/OverlayViewer.png" alt="Viewer Overlay" style="margin: 0 auto; width:100%;"/>
+<img src="apps/chat-overlay/src/assets/images/misc/OverlayViewer.png" alt="Viewer Overlay" style="margin: 0 auto; width:100%;"/>
 </p>
 
 ### `Admin - Chat Overlay (controlled by live stream owner / admin)`
@@ -21,7 +21,7 @@ The following image is what the end user sees on a their Live Video stream with 
 The following image is the control panel used by the admin/owner of the Live Video stream.
 
 <p align="center">
-<img src="apps/yt-chat-overlay/src/assets/images/OverlayAdmin.png" alt="Admin Overlay" style="margin: 0 auto; width:100%;"/>
+<img src="apps/chat-overlay/src/assets/images/misc/OverlayAdmin.png" alt="Admin Overlay" style="margin: 0 auto; width:100%;"/>
 </p>
 
 # `Features`
@@ -31,7 +31,7 @@ The following image is the control panel used by the admin/owner of the Live Vid
 The following image is the control panel and its details
 
 <p align="center">
-<img src="apps/yt-chat-overlay/src/assets/images/OverlayAdminDetails.png" alt="Admin Overlay Details" style="margin: 0 auto; width:100%;"/>
+<img src="apps/chat-overlay/src/assets/images/misc/OverlayAdminDetails.png" alt="Admin Overlay Details" style="margin: 0 auto; width:100%;"/>
 </p>
 
 ### `Admin Features`
@@ -77,7 +77,7 @@ The following image is the control panel and its details
 The following image is the ATEM Software Control, depicting, the downstream luma key setup. Tweak the mask based on your needs.
 
 <p align="center">
-<img src="apps/yt-chat-overlay/src/assets/images/ATEM.png" alt="Admin Overlay Details" style="margin: 0 auto; width:100%;"/>
+<img src="apps/chat-overlay/src/assets/images/misc/ATEM.png" alt="Admin Overlay Details" style="margin: 0 auto; width:100%;"/>
 </p>
 
 #### `ATEM Details`

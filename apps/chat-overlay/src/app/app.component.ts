@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'you-tube-chat-root',
+  selector: 'chat-overlay-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'AvidCaster YouTube Chat Overlay';
+  title = 'AvidCaster Chat Overlay';
 }
