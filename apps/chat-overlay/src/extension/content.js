@@ -77,6 +77,7 @@ function AC_PostMessageSouthBound(action, payload = undefined) {
   const data = {
     type: 'avidcaster-chat-south-bound',
     host: AC_GetDomainName(),
+    streamId: AC_GetStreamUid(),
     action,
     payload,
   };
@@ -97,6 +98,39 @@ function AC_ListenForNewChat(container, selectors) {
   });
 }
 
+// get unique id for youtube stream
+function AC_GetYoutubeUid() {
+  return AC_GetUrlParameter('v');
+}
+
+// get unique id for twitch stream
+function AC_GetTwitchUid() {
+  var match = window?.location?.href?.match(
+    /^.*twitch.*\/popout\/*(.*)\/chat.*$/
+  );
+  if (match?.length) {
+    return match[1];
+  }
+  return '';
+}
+
+// get unique id for stream
+function AC_GetStreamUid() {
+  var uId = '';
+  var target = AC_GetDomainName() || 'youtube';
+  switch (target) {
+    case 'youtube':
+      uId = AC_GetYoutubeUid();
+      break;
+    case 'twitch':
+      uId = AC_GetTwitchUid();
+      break;
+    default:
+      break;
+  }
+  return uId;
+}
+
 // insert iframe - ci, dev or prod
 function AC_InsertIframe(container = 'body') {
   if (!$(container).find('#avidcaster-iframe').length) {
@@ -110,10 +144,8 @@ function AC_InsertIframe(container = 'body') {
       server = 'dev.avidcaster.net:80';
     }
 
-    var target = AC_GetDomainName() || 'youtube';
-
     $(container).append(
-      `<iframe id="avidcaster-iframe" src="https://${server}/chat/monitor/iframe?site=${target}"></iframe>`
+      `<iframe id="avidcaster-iframe" src="https://${server}/chat/iframe"></iframe>`
     );
   }
 }
