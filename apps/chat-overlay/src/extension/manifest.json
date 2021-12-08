@@ -15,7 +15,13 @@
     {
       "css": ["content.css"],
       "js": ["jquery.js", "content.js"],
-      "matches": ["<all_urls>"]
+      "matches": [
+        "https://youtube.com/live_chat*",
+        "https://www.youtube.com/live_chat*",
+        "https://studio.youtube.com/live_chat*",
+        "https://twitch.tv/popout/*",
+        "https://www.twitch.tv/popout/*"
+      ]
     }
   ]
 }
