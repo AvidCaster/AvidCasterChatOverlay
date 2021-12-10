@@ -2,7 +2,7 @@
   "name": "AvidCaster Chat Overlay",
   "description": "The Official AvidCaster Chat Overlay Extension",
   "manifest_version": 3,
-  "version": "1.0.0",
+  "version": "1.0.4",
   "homepage_url": "https://github.com/AvidCaster/AvidCasterChatOverlay",
   "icons": {
     "128": "assets/images/logos/icon-x128.png"
