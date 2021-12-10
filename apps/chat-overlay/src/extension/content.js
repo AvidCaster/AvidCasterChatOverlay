@@ -84,7 +84,7 @@ function AC_PostMessageSouthBound(action, payload = undefined) {
 
   document
     .getElementById('avidcaster-iframe')
-    .contentWindow.postMessage(data, '*');
+    ?.contentWindow?.postMessage(data, '*');
 }
 
 // listen to dom changes, and highlight the new comments if selected keywords are found
@@ -133,7 +133,7 @@ function AC_GetStreamUid() {
 
 // insert iframe - ci, dev or prod
 function AC_InsertIframe(container = 'body') {
-  if (!$(container).find('#avidcaster-iframe').length) {
+  if (!$(container).find('#avidcaster-iframe')?.length) {
     $('#avidcaster-iframe').remove();
 
     var server = 'avidcaster.net';
@@ -165,6 +165,7 @@ function AC_ListenToChild() {
             console.log(
               `Observing for new chat on: ${event.data.payload.container}`
             );
+            AC_PostMessageSouthBound('ready');
             break;
           case 'ping':
             AC_PostMessageSouthBound('pong');
