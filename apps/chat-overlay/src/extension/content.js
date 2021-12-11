@@ -196,4 +196,4 @@ AC_ListenToChild();
 setTimeout(function () {
   // insert iframe, allowing for jquery to load
   AC_InsertIframe();
-}, 1000);
+}, 1100);
