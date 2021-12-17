@@ -187,13 +187,17 @@ function AC_ListenToChild() {
 //  function invocation goes below this line ONLY
 ////////////////////////////////////////////////////////////////////////////////
 
-// if we are in a popup, reopen in new tab
+// if we are in a popup, reopen in new tab )
 AC_OpenInTab();
 
-// listen to incoming actions by the remote window (avidcaster)
-AC_ListenToChild();
-
-setTimeout(function () {
-  // insert iframe, allowing for jquery to load
-  AC_InsertIframe();
-}, 3000);
+// Any jQuery code goes below this line
+window.onload = function () {
+  if (window?.jQuery) {
+    // listen to incoming actions by the remote window (avidcaster)
+    AC_ListenToChild();
+    AC_InsertIframe();
+  } else {
+    // jQuery is not loaded
+    alert('jQuery Not Loading');
+  }
+};

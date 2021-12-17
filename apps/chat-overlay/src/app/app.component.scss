@@ -22,15 +22,14 @@
   margin: 1px auto;
 }
 
-p {
-  margin: 0;
-  padding: 15px;
-}
-
 p span {
   font-weight: bold;
 }
 
 #ac-overlay {
   width: 100%;
+}
+
+.important {
+  color: rgb(27, 146, 39);
 }
